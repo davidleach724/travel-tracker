@@ -4,11 +4,55 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Webpack Starter Kit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+  <title>Travel On</title>
 </head>
 <body>
-  <img src="./images/turing-logo.png" alt="turing logo" height="100px" width="100px">
-  
+  <nav role="navigation">
+    <div class="left-nav">
+      <h1>Hello, Dave</h1>
+    </div>
+    <div class="center-nav">
+      <img src="./images/plane.png" alt="airplane sketch" id="planeSketch">
+    </div>
+    <div class="right-nav">
+      <ul class="nav-links">
+        <li><a href='#plan'>PLAN</a></li>
+        <li><a href='#pending'>PENDING</a></li>
+        <li><a href='#upcoming'>UPCOMING</a></li>
+        <li><a href='#past'>PAST</a></li>
+      </ul>
+    </div>
+  </nav>
+  <main>
+    <div class="jump-to" id="plan"></div>
+    <section class="plan container">
+      <h2>PLAN A TRIP</h2>
+      <div class="plan-body"></div>
+    </section>
+    <div class="jump-to" id="pending"></div>
+    <section class="pending container">
+      <h2>PENDING TRIPS</h2>
+      <div class="pending-body"></div>
+    </section>
+    <div class="jump-to" id="upcoming"></div>
+    <section class="upcoming container">
+      <h2>UPCOMING TRIPS</h2>
+      <div class="upcoming-body"></div>
+    </section>
+    <div class="jump-to" id="past"></div>
+    <section class="past container">
+      <h2>PAST TRIPS</h2>
+      <div class="past-body"></div>
+    </section>
+  </main>
+
+
+  <footer>
+    <img src="./images/glasses.png" alt="glasses sketch" width="150px" height="75px">
+  </footer>
   <!-- Do not include the index.js or main.bundle.js file here - it is done automatically by the webpack server -->
   <script src="bundle.js"></script>
 
