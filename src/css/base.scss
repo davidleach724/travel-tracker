@@ -24,6 +24,7 @@ body {
   margin: 0;
 }
 
+// TOP NAV MENU BAR
 nav {
   display: flex;
   justify-content: space-between;
@@ -57,6 +58,7 @@ nav {
   }
 }
 
+// MAIN SECTION
 main {
   display: flex;
   flex-direction: column;
@@ -64,6 +66,8 @@ main {
 }
 
 .container {
+  display: flex;
+  flex-direction: column;
   height: 450px;
   width: 90%;
   margin: 15px;
@@ -73,4 +77,25 @@ main {
 
 .plan {
   margin-top: 20vh;
+}
+
+h2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 15%
+}
+
+plan-body {
+  height: 85%;
+}
+
+
+
+
+// FOOTER
+footer {
+  height: 15vh;
+  width: 100%;
+  background-color: $primary-color;
 }
