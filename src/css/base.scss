@@ -95,6 +95,8 @@ plan-body {
 
 // FOOTER
 footer {
+  display: flex;
+  justify-content: flex-end;
   height: 15vh;
   width: 100%;
   background-color: $primary-color;
