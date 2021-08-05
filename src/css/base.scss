@@ -8,8 +8,46 @@ $primary-text-color:   #212121;
 $secondary-text-color: #757575;
 $divider-color:        #BDBDBD;
 
+* {
+  margin: 0;
+  padding: 0;
+}
 
 body {
-  background: $primary-background;
+  background: $primary-color;
   font-family: 'Roboto', sans-serif;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  margin: 0;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  height: 15vh;
+  background-color: $primary-color-dark;
+}
+
+.left-nav, .right-nav{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  font-size: 4vh;
+  padding: 10px
+}
+
+.nav-links{
+  display: flex;
+  flex-direction: row;
+  font-size: 3vh;
+  list-style-type: none;
+  & a {
+    color: $primary-text-color;
+    text-decoration: none;
+    padding: 10px
+  }
+  & :hover {
+    cursor: pointer;
+    color: $primary-color-text;
+  }
 }
