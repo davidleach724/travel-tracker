@@ -1,6 +1,3 @@
-// This is the JavaScript entry file - your code begins here
-// Do not delete or rename this file ********
-
 // An example of how you tell webpack to use a CSS (SCSS) file
 import './css/base.scss';
 
@@ -9,19 +6,22 @@ import './images/turing-logo.png'
 import './images/plane.png'
 import './images/glasses.png'
 
+// Import Api call functions
 import {getAllTravelers} from './apiCalls';
 import {getSingleTraveler} from './apiCalls';
 import {getAllTrips} from './apiCalls';
 import {getAllDestinations} from './apiCalls';
 
+// Import classes
 import AllTravelers from './AllTravelers';
 import Destinations from './Destinations';
 import Traveler from './Traveler';
 import Trips from './Trips';
 
+// Global variables
 let id = 2;
 
-
+// Functions
 const gatherData = () => {
   Promise.all([getAllTravelers(), getSingleTraveler(1), getAllTrips(), getAllDestinations()])
     .then(data => {
@@ -36,7 +36,6 @@ gatherData()
 
 const generateAllTravelerData = (data) => {
   let allTravelerData = new AllTravelers(data);
-  console.log(allTravelerData)
 }
 
 const generateSingleTravelerData = (data) => {
@@ -46,8 +45,10 @@ const generateSingleTravelerData = (data) => {
 const generateTripsData = (data) => {
   let allTrips = new Trips(data);
   let travelerTrips = allTrips.filterTripsById(id)
+  console.log(travelerTrips);
 }
 
 const genereateDestinationData = (data) => {
   let destinationData = new Destinations(data);
+
 }
