@@ -7,6 +7,7 @@ $accent-color:         #9E9E9E;
 $primary-text-color:   #212121;
 $secondary-text-color: #757575;
 $divider-color:        #BDBDBD;
+$background-container-color: #FFFFFF;
 
 * {
   margin: 0;
@@ -25,6 +26,8 @@ nav {
   display: flex;
   justify-content: space-between;
   height: 15vh;
+  width: 100%;
+  position: fixed;
   background-color: $primary-color-dark;
 }
 
@@ -50,4 +53,21 @@ nav {
     cursor: pointer;
     color: $primary-color-text;
   }
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container {
+  height: 450px;
+  width: 90%;
+  background-color: $background-container-color;
+  margin: 15px;
+}
+
+.plan {
+  margin-top: 20vh;
 }
