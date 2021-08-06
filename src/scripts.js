@@ -19,7 +19,7 @@ import Traveler from './Traveler';
 import Trips from './Trips';
 
 // Global variables
-let userID = 44;
+let userID = 3;
 let allTravelerData, travelerData, allTrips, destinationData, travelerTrips;
 
 // Functions
@@ -51,14 +51,14 @@ const generateTripsData = (data) => {
 
 const genereateDestinationData = (data) => {
   destinationData = new Destinations(data);
-  console.log(getTripCosts(travelerTrips, destinationData))
-  // console.log(destinationData.getDestinationByID(49))
+  let userTripCosts = (getTripCosts(travelerTrips, destinationData))
+  console.log(userTripCosts);
+
 }
 
 const getTripCosts = (trips, destinations) => {
   return trips.reduce((arr, trip) => {
     let currentDest = destinations.getDestinationByID(trip.destinationID)
-    console.log('current dest: ', currentDest)
     let tripObj = {
       'destinationID': currentDest.id,
       'tripID': trip.id,
@@ -75,5 +75,4 @@ const getTripCosts = (trips, destinations) => {
     arr.push(tripObj)
     return arr     
   }, [])
-  // console.log(trips, destinations)
 }
