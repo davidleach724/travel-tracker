@@ -5,6 +5,10 @@ import './css/base.scss';
 import './images/turing-logo.png'
 import './images/plane.png'
 import './images/glasses.png'
+import './images/planeandclouds.png'
+import './images/cloud_left.png'
+import './images/travelon_line.png'
+import './images/copyright_website.png'
 
 // Import Api call functions
 import {getAllTravelers} from './apiCalls';
