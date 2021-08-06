@@ -19,7 +19,8 @@ import Traveler from './Traveler';
 import Trips from './Trips';
 
 // Global variables
-let id = 2;
+let userID = 44;
+let allTravelerData, travelerData, allTrips, destinationData, travelerTrips;
 
 // Functions
 const gatherData = () => {
@@ -35,20 +36,44 @@ const gatherData = () => {
 gatherData()
 
 const generateAllTravelerData = (data) => {
-  let allTravelerData = new AllTravelers(data);
+  allTravelerData = new AllTravelers(data);
 }
 
 const generateSingleTravelerData = (data) => {
-  let travelerData = new Traveler(data);
+  travelerData = new Traveler(data);
 }
 
 const generateTripsData = (data) => {
-  let allTrips = new Trips(data);
-  let travelerTrips = allTrips.filterTripsById(id)
-  console.log(travelerTrips);
+  allTrips = new Trips(data);
+  travelerTrips = allTrips.filterTripsById(userID)
+  
 }
 
 const genereateDestinationData = (data) => {
-  let destinationData = new Destinations(data);
+  destinationData = new Destinations(data);
+  console.log(getTripCosts(travelerTrips, destinationData))
+  // console.log(destinationData.getDestinationByID(49))
+}
 
+const getTripCosts = (trips, destinations) => {
+  return trips.reduce((arr, trip) => {
+    let currentDest = destinations.getDestinationByID(trip.destinationID)
+    console.log('current dest: ', currentDest)
+    let tripObj = {
+      'destinationID': currentDest.id,
+      'tripID': trip.id,
+      'destination': currentDest.destination,
+      'image': currentDest.image,
+      'date': trip.date,
+      'duration': trip.duration,
+      'travelers': trip.travelers,
+      'lodging': (trip.duration * currentDest.estimatedLodgingCostPerDay),
+      'flight': (trip.travelers * currentDest.estimatedFlightCostPerPerson),
+      'bookingFee': ((trip.duration * currentDest.estimatedLodgingCostPerDay) + (trip.travelers * currentDest.estimatedFlightCostPerPerson)) * .1,
+      'totalCost': Math.floor(((trip.duration * currentDest.estimatedLodgingCostPerDay) + (trip.travelers * currentDest.estimatedFlightCostPerPerson))*1.1)
+    }
+    arr.push(tripObj)
+    return arr     
+  }, [])
+  // console.log(trips, destinations)
 }

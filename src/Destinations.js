@@ -9,6 +9,10 @@ class Destinations {
       return arr
     }, []).sort()
   }
+
+  getDestinationByID(id) {
+    return this.data.find(spot => spot.id === id)
+  }
 }
 
 export default Destinations;

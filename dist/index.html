@@ -49,9 +49,9 @@
         <div class="glide">
           <div class="glide__track" data-glide-el="track">
             <ul class="glide__slides">
-              <li class="glide__slide">0</li>
-              <li class="glide__slide">1</li>
-              <li class="glide__slide">2</li>
+              <li class="glide__slide"><img src="https://images.unsplash.com/photo-1461360370896-922624d12aa1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mnx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60" height="400px" width="300px"></li>
+              <li class="glide__slide"><img src="https://images.unsplash.com/photo-1515325595179-59cd5262ca53?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8NHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60" height="400px" width="300px"></li>
+              <li class="glide__slide"><img src="https://images.unsplash.com/photo-1447727214830-cbcbf097b52c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8N3x8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60" height="400px" width="300px"></li>
             </ul>
           </div>
           <div class="glide__arrows" data-glide-el="controls">
@@ -71,7 +71,11 @@
   <!-- Do not include the index.js or main.bundle.js file here - it is done automatically by the webpack server -->
   <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
 <script>
-  new Glide('.glide').mount()
+  const config = {
+    type: 'carousel',
+    perView: 2
+  }
+  new Glide('.glide', config).mount()
 </script>
 <script src="bundle.js"></script>
 
