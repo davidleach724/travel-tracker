@@ -25,6 +25,7 @@ let allTravelerData, travelerData, allTrips, destinationData, travelerTrips, ran
 const gatherData = () => {
   Promise.all([getAllTravelers(), getSingleTraveler(1), getAllTrips(), getAllDestinations()])
     .then(data => {
+      generateRandomUser(data[0])
       generateAllTravelerData(data[0]);
       generateSingleTravelerData(data[1]);
       generateTripsData(data[2]);
@@ -39,7 +40,6 @@ gatherData()
 
 const generateAllTravelerData = (data) => {
   allTravelerData = new AllTravelers(data);
-  randomUserID = generateRandomUser(data);
 }
 
 const generateSingleTravelerData = (data) => {
@@ -80,5 +80,5 @@ const getTripCosts = (trips, destinations) => {
 }
 
 const generateRandomUser = (data) => {
-  let num = Math.floor(Math.random() * data.travelers.length + 1)
+  randomUserID = Math.floor(Math.random() * data.travelers.length + 1)
 }
