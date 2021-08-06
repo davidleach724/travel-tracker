@@ -1,3 +1,6 @@
+@import "node_modules/@glidejs/glide/src/assets/sass/glide.core";
+@import "node_modules/@glidejs/glide/src/assets/sass/glide.theme";
+
 /*Sass Color Palette*/
 $primary-color-dark:   #0288D1;
 $primary-color:        #03A9F4;
@@ -95,7 +98,10 @@ plan-body {
   height: 85%;
 }
 
-
+.past {
+  display: flex;
+  flex-direction: column;
+}
 
 
 // FOOTER
