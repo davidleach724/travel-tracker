@@ -19,8 +19,7 @@ import Traveler from './Traveler';
 import Trips from './Trips';
 
 // Global variables
-let userID = 3;
-let allTravelerData, travelerData, allTrips, destinationData, travelerTrips;
+let allTravelerData, travelerData, allTrips, destinationData, travelerTrips, randomUserID;
 
 // Functions
 const gatherData = () => {
@@ -35,8 +34,12 @@ const gatherData = () => {
 
 gatherData()
 
+
+
+
 const generateAllTravelerData = (data) => {
   allTravelerData = new AllTravelers(data);
+  randomUserID = generateRandomUser(data);
 }
 
 const generateSingleTravelerData = (data) => {
@@ -45,8 +48,7 @@ const generateSingleTravelerData = (data) => {
 
 const generateTripsData = (data) => {
   allTrips = new Trips(data);
-  travelerTrips = allTrips.filterTripsById(userID)
-  
+  travelerTrips = allTrips.filterTripsById(randomUserID)
 }
 
 const genereateDestinationData = (data) => {
@@ -75,4 +77,8 @@ const getTripCosts = (trips, destinations) => {
     arr.push(tripObj)
     return arr     
   }, [])
+}
+
+const generateRandomUser = (data) => {
+  let num = Math.floor(Math.random() * data.travelers.length + 1)
 }
