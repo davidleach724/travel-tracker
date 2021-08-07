@@ -24,43 +24,43 @@ import Trips from './Trips';
 
 // Global variables
 let allTravelerData, travelerData, allTrips, destinationData, travelerTrips, randomUserID;
+let userID = 43
 
 // Functions
 const gatherData = () => {
-  Promise.all([getAllTravelers(), getSingleTraveler(1), getAllTrips(), getAllDestinations()])
+  Promise.all([getAllTravelers(), getSingleTraveler(userID), getAllTrips(), getAllDestinations()])
     .then(data => {
       generateRandomUser(data[0])
       generateAllTravelerData(data[0]);
-      generateSingleTravelerData(data[1]);
       generateTripsData(data[2]);
       genereateDestinationData(data[3]);
+      generateSingleTravelerData(data[1]);
     })
 }
 
 gatherData()
 
-
-
-
 const generateAllTravelerData = (data) => {
   allTravelerData = new AllTravelers(data);
 }
 
-const generateSingleTravelerData = (data) => {
-  travelerData = new Traveler(data);
-}
-
 const generateTripsData = (data) => {
   allTrips = new Trips(data);
-  travelerTrips = allTrips.filterTripsById(randomUserID)
+  travelerTrips = allTrips.filterTripsById(userID)
 }
 
 const genereateDestinationData = (data) => {
   destinationData = new Destinations(data);
-  let userTripCosts = (getTripCosts(travelerTrips, destinationData))
-  console.log(userTripCosts);
-
+  // let userTripCosts = (getTripCosts(travelerTrips, destinationData))
+  // console.log(userTripCosts);
 }
+
+const generateSingleTravelerData = (userID) => {
+  travelerData = new Traveler(userID, travelerTrips, destinationData);
+  console.log(travelerData);
+}
+
+
 
 const getTripCosts = (trips, destinations) => {
   return trips.reduce((arr, trip) => {
