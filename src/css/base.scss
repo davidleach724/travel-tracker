@@ -40,10 +40,14 @@ nav {
 .left-nav, .right-nav{
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   font-size: 4vh;
   padding: 10px
+}
+
+.right-nav {
+  justify-content: space-between;
 }
 
 .nav-links{
@@ -67,10 +71,10 @@ nav {
   width: 100%;
 }
 
-#cloudsLeft {
-  height: 6vh;
-  width: 8vw;
-}
+// #cloudsLeft {
+//   height: 6vh;
+//   width: 8vw;
+// }
 
 #travelOnLogo {
   height: 6vh;
