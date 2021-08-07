@@ -23,7 +23,7 @@ import Traveler from './Traveler';
 import Trips from './Trips';
 
 // Global variables
-let allTravelerData, travelerData, allTrips, destinationData, travelerTrips, randomUserID;
+let allTravelerData, travelerData, allTrips, destinationData, travelerTrips;
 let userID = 43
 
 // Functions
