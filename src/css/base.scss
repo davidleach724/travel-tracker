@@ -118,6 +118,11 @@ plan-body {
   flex-direction: column;
 }
 
+.past-cards {
+  display: flex;
+  flex-direction: row;
+}
+
 .card-container {
   border: 1px solid black;
   border-radius: 15px;
