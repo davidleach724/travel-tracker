@@ -30,7 +30,7 @@ let userID = 43
 const gatherData = () => {
   Promise.all([getAllTravelers(), getSingleTraveler(userID), getAllTrips(), getAllDestinations()])
     .then(data => {
-      generateRandomUser(data[0])
+      // generateRandomUser(data[0])
       generateAllTravelerData(data[0]);
       generateTripsData(data[2]);
       genereateDestinationData(data[3]);
@@ -62,27 +62,27 @@ const generateSingleTravelerData = (userID) => {
 
 
 
-const getTripCosts = (trips, destinations) => {
-  return trips.reduce((arr, trip) => {
-    let currentDest = destinations.getDestinationByID(trip.destinationID)
-    let tripObj = {
-      'destinationID': currentDest.id,
-      'tripID': trip.id,
-      'destination': currentDest.destination,
-      'image': currentDest.image,
-      'date': trip.date,
-      'duration': trip.duration,
-      'travelers': trip.travelers,
-      'lodging': (trip.duration * currentDest.estimatedLodgingCostPerDay),
-      'flight': (trip.travelers * currentDest.estimatedFlightCostPerPerson),
-      'bookingFee': ((trip.duration * currentDest.estimatedLodgingCostPerDay) + (trip.travelers * currentDest.estimatedFlightCostPerPerson)) * .1,
-      'totalCost': Math.floor(((trip.duration * currentDest.estimatedLodgingCostPerDay) + (trip.travelers * currentDest.estimatedFlightCostPerPerson))*1.1)
-    }
-    arr.push(tripObj)
-    return arr     
-  }, [])
-}
+// const getTripCosts = (trips, destinations) => {
+//   return trips.reduce((arr, trip) => {
+//     let currentDest = destinations.getDestinationByID(trip.destinationID)
+//     let tripObj = {
+//       'destinationID': currentDest.id,
+//       'tripID': trip.id,
+//       'destination': currentDest.destination,
+//       'image': currentDest.image,
+//       'date': trip.date,
+//       'duration': trip.duration,
+//       'travelers': trip.travelers,
+//       'lodging': (trip.duration * currentDest.estimatedLodgingCostPerDay),
+//       'flight': (trip.travelers * currentDest.estimatedFlightCostPerPerson),
+//       'bookingFee': ((trip.duration * currentDest.estimatedLodgingCostPerDay) + (trip.travelers * currentDest.estimatedFlightCostPerPerson)) * .1,
+//       'totalCost': Math.floor(((trip.duration * currentDest.estimatedLodgingCostPerDay) + (trip.travelers * currentDest.estimatedFlightCostPerPerson))*1.1)
+//     }
+//     arr.push(tripObj)
+//     return arr     
+//   }, [])
+// }
 
-const generateRandomUser = (data) => {
-  randomUserID = Math.floor(Math.random() * data.travelers.length + 1)
-}
+// const generateRandomUser = (data) => {
+//   randomUserID = Math.floor(Math.random() * data.travelers.length + 1)
+// }
