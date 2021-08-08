@@ -37,6 +37,7 @@ nav {
   width: 100%;
   position: fixed;
   background-color: $primary-color-dark;
+  z-index: 1;
 }
 
 .left-nav, .right-nav{
@@ -79,6 +80,26 @@ nav {
   width: 60%
 }
 
+.custom-shape-divider-top-1628440474 {
+  position: absolute;
+  top: 15vh;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.custom-shape-divider-top-1628440474 svg {
+  position: relative;
+  display: block;
+  width: calc(143% + 1.3px);
+  height: 80px;
+}
+
+.custom-shape-divider-top-1628440474 .shape-fill {
+  fill: #0288D1;
+}
+
 // MAIN SECTION
 main {
   display: flex;
@@ -97,7 +118,7 @@ main {
 }
 
 .plan {
-  margin-top: 20vh;
+  margin-top: 21vh;
 }
 
 h2 {

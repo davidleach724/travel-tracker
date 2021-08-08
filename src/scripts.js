@@ -25,7 +25,7 @@ import domUpdates from './domUpdates'
 
 // Global variables
 let allTravelerData, travelerData, allTrips, destinationData, travelerTrips;
-let userID = 22
+let userID = 38
 
 
 
