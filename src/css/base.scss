@@ -114,7 +114,7 @@ plan-body {
   flex-direction: column;
 }
 
-.past-cards {
+.past-body, .pending-body, .upcoming-body {
   display: flex;
   flex-direction: row;
 }

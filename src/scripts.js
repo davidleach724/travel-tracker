@@ -57,6 +57,8 @@ const genereateDestinationData = (data) => {
 
 const generateSingleTravelerData = (userID) => {
   travelerData = new Traveler(userID, travelerTrips, destinationData);
+  
   domUpdates.renderUserName(travelerData);
+  domUpdates.renderTravelCards(travelerData);
   console.log(travelerData);
 }
