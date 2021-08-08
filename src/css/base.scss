@@ -41,8 +41,13 @@ nav {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  align-items: center;
   font-size: 4vh;
   padding: 10px
+}
+
+.right-nav {
+  justify-content: space-between;
 }
 
 .nav-links{
@@ -64,6 +69,12 @@ nav {
 #planeSketch {
   height: 13vh;
   width: 100%;
+}
+
+
+#travelOnLogo {
+  height: 6vh;
+  width: 60%
 }
 
 // MAIN SECTION
@@ -103,12 +114,45 @@ plan-body {
   flex-direction: column;
 }
 
+.past-cards {
+  display: flex;
+  flex-direction: row;
+}
+
+.card-container {
+  border: 1px solid black;
+  border-radius: 15px;
+  height: 390px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 5px;
+}
+
+.destination-img {
+  height: 170px;
+  width: 100%;
+  object-fit: contain;
+}
+
+.bottom-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
 
 // FOOTER
 footer {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
+  align-items: flex-end;
   height: 15vh;
   width: 100%;
   background-color: $primary-color;
+}
+
+#copyRight {
+  height:40%;
 }
