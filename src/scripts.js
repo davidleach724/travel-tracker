@@ -21,10 +21,11 @@ import AllTravelers from './AllTravelers';
 import Destinations from './Destinations';
 import Traveler from './Traveler';
 import Trips from './Trips';
+import domUpdates from './domUpdates'
 
 // Global variables
 let allTravelerData, travelerData, allTrips, destinationData, travelerTrips;
-let userID = 22
+let userID = 38
 
 
 
@@ -56,5 +57,8 @@ const genereateDestinationData = (data) => {
 
 const generateSingleTravelerData = (userID) => {
   travelerData = new Traveler(userID, travelerTrips, destinationData);
+  
+  domUpdates.renderUserName(travelerData);
+  domUpdates.renderTravelCards(travelerData);
   console.log(travelerData);
 }

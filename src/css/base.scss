@@ -11,6 +11,8 @@ $primary-text-color:   #212121;
 $secondary-text-color: #757575;
 $divider-color:        #BDBDBD;
 $background-container-color: #FFFFFF;
+$card-background-color: #f1f4f6;
+;
 
 * {
   margin: 0;
@@ -35,6 +37,7 @@ nav {
   width: 100%;
   position: fixed;
   background-color: $primary-color-dark;
+  z-index: 1;
 }
 
 .left-nav, .right-nav{
@@ -77,6 +80,27 @@ nav {
   width: 60%
 }
 
+//Nav wave effects
+.custom-shape-divider-top-1628440474 {
+  position: absolute;
+  top: 15vh;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.custom-shape-divider-top-1628440474 svg {
+  position: relative;
+  display: block;
+  width: calc(143% + 1.3px);
+  height: 80px;
+}
+
+.custom-shape-divider-top-1628440474 .shape-fill {
+  fill: #0288D1;
+}
+
 // MAIN SECTION
 main {
   display: flex;
@@ -95,7 +119,7 @@ main {
 }
 
 .plan {
-  margin-top: 20vh;
+  margin-top: 21vh;
 }
 
 h2 {
@@ -114,14 +138,16 @@ plan-body {
   flex-direction: column;
 }
 
-.past-cards {
+.past-body, .pending-body, .upcoming-body {
   display: flex;
   flex-direction: row;
 }
 
 .card-container {
-  border: 1px solid black;
   border-radius: 15px;
+  background: $card-background-color;
+  box-shadow:  5px 5px 8px #cccccc,
+               -5px -5px 8px #ffffff;
   height: 390px;
   width: 300px;
   display: flex;
@@ -132,11 +158,11 @@ plan-body {
 
 .destination-img {
   height: 170px;
-  width: 100%;
+  width: 257px;
   object-fit: contain;
 }
 
-.bottom-card {
+.bottom-card, .top-card {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;

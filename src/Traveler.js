@@ -29,7 +29,11 @@ class Traveler {
         'lodging': (trip.duration * currentDest.estimatedLodgingCostPerDay),
         'flight': (trip.travelers * currentDest.estimatedFlightCostPerPerson),
         'bookingFee': ((trip.duration * currentDest.estimatedLodgingCostPerDay) + (trip.travelers * currentDest.estimatedFlightCostPerPerson)) * .1,
-        'totalCost': Math.floor(((trip.duration * currentDest.estimatedLodgingCostPerDay) + (trip.travelers * currentDest.estimatedFlightCostPerPerson))*1.1)
+        'totalCost': new Intl.NumberFormat('en-US', {
+          style: 'currency',
+          currency: 'USD',
+          maximumFractionDigits: 0
+        }).format(((trip.duration * currentDest.estimatedLodgingCostPerDay) + (trip.travelers * currentDest.estimatedFlightCostPerPerson))*1.1)
       }  
       if (tripObj.status === 'pending') {
         this.pendingTrips.push(tripObj)
