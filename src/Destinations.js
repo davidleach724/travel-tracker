@@ -13,6 +13,10 @@ class Destinations {
   getDestinationByID(id) {
     return this.data.find(spot => spot.id === id)
   }
+
+  getDestinationByName(name) {
+    return this.data.find(spot => spot.destination === name);
+  }
 }
 
 export default Destinations;

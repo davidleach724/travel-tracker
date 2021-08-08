@@ -118,10 +118,6 @@ main {
   background-color: $background-container-color;
 }
 
-.plan {
-  margin-top: 21vh;
-}
-
 h2 {
   display: flex;
   justify-content: center;
@@ -129,9 +125,28 @@ h2 {
   height: 15%
 }
 
+// Plan a Trip Section
+.plan {
+  margin-top: 21vh;
+}
+
 plan-body {
   height: 85%;
 }
+
+.plan-left {
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  height: 45vh;
+  width: 45vw;
+  margin: 5px;
+}
+
+#destinationList {
+  width: 20vw;
+}
+
 
 .past {
   display: flex;

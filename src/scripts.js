@@ -23,6 +23,14 @@ import Traveler from './Traveler';
 import Trips from './Trips';
 import domUpdates from './domUpdates'
 
+// Event Listeners
+let destinationMenu = document.getElementById('destinationList');
+
+destinationMenu.onchange = function() {
+  let selectDestination = destinationMenu.value;
+  domUpdates.updateDestinationPicture(destinationData.getDestinationByName(selectDestination));
+}
+
 // Global variables
 let allTravelerData, travelerData, allTrips, destinationData, travelerTrips;
 let userID = 38

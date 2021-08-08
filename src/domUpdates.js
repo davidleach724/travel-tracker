@@ -52,7 +52,12 @@ let domUpdates = {
       <option value="${place}">${place}</option>
       `
     })
-    
+  },
+
+  updateDestinationPicture(destination) {
+    let selectedDestination = document.getElementById('chosenDestination')
+    selectedDestination.src= destination.image
+    selectedDestination.alt = destination.alt
   }
 }
 
