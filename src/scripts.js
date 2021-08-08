@@ -9,6 +9,7 @@ import './images/planeandclouds.png'
 import './images/cloud_left.png'
 import './images/travelon_line.png'
 import './images/copyright_website.png'
+import './images/choose_destination.png'
 
 // Import Api call functions
 import {getAllTravelers} from './apiCalls';

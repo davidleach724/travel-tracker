@@ -128,13 +128,15 @@ h2 {
 // Plan a Trip Section
 .plan {
   margin-top: 21vh;
+  
 }
 
-plan-body {
+.plan-body {
+  display: flex;
   height: 85%;
 }
 
-.plan-left {
+.plan-left, .plan-right{
   border: 1px solid black;
   display: flex;
   flex-direction: column;
@@ -143,8 +145,21 @@ plan-body {
   margin: 5px;
 }
 
+.choose-destination {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 10px;
+}
+
 #destinationList {
   width: 20vw;
+}
+
+.chosen-destination {
+  height: 30vh;
+  width: 100%;
+  padding-top: 2em;
+
 }
 
 
