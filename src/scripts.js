@@ -1,7 +1,5 @@
 // An example of how you tell webpack to use a CSS (SCSS) file
 import './css/base.scss';
-import moment from 'moment';
-
 
 // An example of how you tell webpack to use an image (also need to link to it in the index.html)
 import './images/turing-logo.png'
@@ -34,7 +32,6 @@ let userID = 22
 const gatherData = () => {
   Promise.all([getAllTravelers(), getSingleTraveler(userID), getAllTrips(), getAllDestinations()])
     .then(data => {
-      // generateRandomUser(data[0])
       generateAllTravelerData(data[0]);
       generateTripsData(data[2]);
       genereateDestinationData(data[3]);
@@ -55,43 +52,9 @@ const generateTripsData = (data) => {
 
 const genereateDestinationData = (data) => {
   destinationData = new Destinations(data);
-  // let userTripCosts = (getTripCosts(travelerTrips, destinationData))
-  // console.log(userTripCosts);
 }
 
 const generateSingleTravelerData = (userID) => {
   travelerData = new Traveler(userID, travelerTrips, destinationData);
   console.log(travelerData);
-  // let date = "2022/09/16"
-  // let parsedDate = date.replaceAll('/', '-')
-  // // console.log(parsedDate)
-  // let newDate = moment(parsedDate).format('LL')
-  // console.log(newDate)
 }
-
-
-
-// const getTripCosts = (trips, destinations) => {
-//   return trips.reduce((arr, trip) => {
-//     let currentDest = destinations.getDestinationByID(trip.destinationID)
-//     let tripObj = {
-//       'destinationID': currentDest.id,
-//       'tripID': trip.id,
-//       'destination': currentDest.destination,
-//       'image': currentDest.image,
-//       'date': trip.date,
-//       'duration': trip.duration,
-//       'travelers': trip.travelers,
-//       'lodging': (trip.duration * currentDest.estimatedLodgingCostPerDay),
-//       'flight': (trip.travelers * currentDest.estimatedFlightCostPerPerson),
-//       'bookingFee': ((trip.duration * currentDest.estimatedLodgingCostPerDay) + (trip.travelers * currentDest.estimatedFlightCostPerPerson)) * .1,
-//       'totalCost': Math.floor(((trip.duration * currentDest.estimatedLodgingCostPerDay) + (trip.travelers * currentDest.estimatedFlightCostPerPerson))*1.1)
-//     }
-//     arr.push(tripObj)
-//     return arr     
-//   }, [])
-// }
-
-// const generateRandomUser = (data) => {
-//   randomUserID = Math.floor(Math.random() * data.travelers.length + 1)
-// }

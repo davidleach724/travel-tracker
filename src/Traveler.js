@@ -20,7 +20,7 @@ class Traveler {
         'tripID': trip.id,
         'destination': currentDest.destination,
         'image': currentDest.image,
-        'imageAlt': currentDest.imageAlt,
+        'imageAlt': currentDest.alt,
         'startDate': moment(trip.date.replaceAll('/', '-')).format('LL'),
         'endDate': moment(trip.date.replaceAll('/', '-')).add(trip.duration, 'day').format('LL'),
         'duration': trip.duration,
