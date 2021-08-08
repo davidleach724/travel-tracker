@@ -1,3 +1,5 @@
+import moment from 'moment';
+
 class Traveler {
   constructor(travelerData, trips, destinations) {
     this.id = travelerData.id
@@ -6,6 +8,7 @@ class Traveler {
     this.pendingTrips = []
     this.upcomingTrips = []
     this.pastTrips = []
+    this.currentDate = moment().format('LL')
     this.populateUserTrips(trips, destinations)
   }
 
@@ -18,7 +21,8 @@ class Traveler {
         'destination': currentDest.destination,
         'image': currentDest.image,
         'imageAlt': currentDest.imageAlt,
-        'date': trip.date,
+        'startDate': moment(trip.date.replaceAll('/', '-')).format('LL'),
+        'endDate': moment(trip.date.replaceAll('/', '-')).add(trip.duration, 'day').format('LL'),
         'duration': trip.duration,
         'status': trip.status,
         'travelers': trip.travelers,
@@ -27,7 +31,13 @@ class Traveler {
         'bookingFee': ((trip.duration * currentDest.estimatedLodgingCostPerDay) + (trip.travelers * currentDest.estimatedFlightCostPerPerson)) * .1,
         'totalCost': Math.floor(((trip.duration * currentDest.estimatedLodgingCostPerDay) + (trip.travelers * currentDest.estimatedFlightCostPerPerson))*1.1)
       }  
-      this.pastTrips.push(tripObj)
+      if (tripObj.status === 'pending') {
+        this.pendingTrips.push(tripObj)
+      } else if (moment(trip.date.replaceAll('/', '-')).isAfter(moment().format('YYYY-MM-DD'))) {
+        this.upcomingTrips.push(tripObj)
+      } else {
+        this.pastTrips.push(tripObj)
+      }
     })
   }
 }

@@ -1,5 +1,7 @@
 // An example of how you tell webpack to use a CSS (SCSS) file
 import './css/base.scss';
+import moment from 'moment';
+
 
 // An example of how you tell webpack to use an image (also need to link to it in the index.html)
 import './images/turing-logo.png'
@@ -24,7 +26,9 @@ import Trips from './Trips';
 
 // Global variables
 let allTravelerData, travelerData, allTrips, destinationData, travelerTrips;
-let userID = 43
+let userID = 22
+
+
 
 // Functions
 const gatherData = () => {
@@ -58,6 +62,11 @@ const genereateDestinationData = (data) => {
 const generateSingleTravelerData = (userID) => {
   travelerData = new Traveler(userID, travelerTrips, destinationData);
   console.log(travelerData);
+  // let date = "2022/09/16"
+  // let parsedDate = date.replaceAll('/', '-')
+  // // console.log(parsedDate)
+  // let newDate = moment(parsedDate).format('LL')
+  // console.log(newDate)
 }
 
 
