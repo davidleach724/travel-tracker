@@ -11,6 +11,8 @@ $primary-text-color:   #212121;
 $secondary-text-color: #757575;
 $divider-color:        #BDBDBD;
 $background-container-color: #FFFFFF;
+$card-background-color: #f1f4f6;
+;
 
 * {
   margin: 0;
@@ -120,8 +122,10 @@ plan-body {
 }
 
 .card-container {
-  border: 1px solid black;
   border-radius: 15px;
+  background: $card-background-color;
+  box-shadow:  5px 5px 8px #cccccc,
+               -5px -5px 8px #ffffff;
   height: 390px;
   width: 300px;
   display: flex;
@@ -132,11 +136,11 @@ plan-body {
 
 .destination-img {
   height: 170px;
-  width: 100%;
+  width: 257px;
   object-fit: contain;
 }
 
-.bottom-card {
+.bottom-card, .top-card {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
