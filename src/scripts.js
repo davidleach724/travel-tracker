@@ -53,6 +53,7 @@ const generateTripsData = (data) => {
 
 const genereateDestinationData = (data) => {
   destinationData = new Destinations(data);
+  domUpdates.generateDestinationList(destinationData.getDestinationList())
 }
 
 const generateSingleTravelerData = (userID) => {

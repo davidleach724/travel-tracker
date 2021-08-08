@@ -43,6 +43,16 @@ let domUpdates = {
       </div>
     </div>`
       })
+  },
+
+  generateDestinationList(destinationList) {
+    let destinationMenu = document.getElementById('destinationList');
+    destinationList.forEach(place => {
+      destinationMenu.innerHTML += `
+      <option value="${place}">${place}</option>
+      `
+    })
+    
   }
 }
 
