@@ -53,20 +53,6 @@ travelerQty.onchange = function() {
   checkUserInputs()
 }
 
-function checkUserInputs() {
-  let tripDuration = moment(endDate.value).diff(startDate.value, 'days');
-
-  if (destinationMenu.value != 'none' && travelerQty.value && tripDuration>0) {
-    console.log('yaboi')
-    updatePlanCosts(currentDestination, tripDuration, );
-  }
-}
-
-// travelerQty.onchange = function() {
-//   let currentDestination = destinationData.getDestinationByName(destinationMenu.value)
-//   domUpdates.updatePlanCosts(currentDestination, travelerQty.value)
-// }
-
 // Global variables
 let allTravelerData, travelerData, allTrips, destinationData, travelerTrips;
 let userID = 38
@@ -104,4 +90,13 @@ const generateSingleTravelerData = (userID) => {
   domUpdates.renderUserName(travelerData);
   domUpdates.renderTravelCards(travelerData);
   console.log(travelerData);
+}
+
+function checkUserInputs() {
+  let tripDuration = moment(endDate.value).diff(startDate.value, 'days');
+
+  if (destinationMenu.value != 'none' && travelerQty.value && tripDuration>0) {
+    console.log('yaboi')
+    updatePlanCosts(currentDestination, tripDuration, );
+  }
 }
