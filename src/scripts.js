@@ -28,17 +28,38 @@ import domUpdates from './domUpdates'
 // Event Listeners
 let destinationMenu = document.getElementById('destinationList');
 let startDate = document.getElementById('startDate')
-// let travelerQty = document.getElementById('quantity')
+let endDate = document.getElementById('endDate')
+let travelerQty = document.getElementById('quantity')
+
+let currentDestination;
 
 
 destinationMenu.onchange = function() {
   let selectDestination = destinationMenu.value;
-  let currentDestination = destinationData.getDestinationByName(selectDestination)
+  currentDestination = destinationData.getDestinationByName(selectDestination)
   domUpdates.updateDestinationPicture(currentDestination);
+  checkUserInputs()
 }
 
 startDate.onchange = function() {
   domUpdates.updateEndDateMin(startDate.value)
+}
+
+endDate.onchange = function() {
+  checkUserInputs()
+}
+
+travelerQty.onchange = function() {
+  checkUserInputs()
+}
+
+function checkUserInputs() {
+  let tripDuration = moment(endDate.value).diff(startDate.value, 'days');
+
+  if (destinationMenu.value != 'none' && travelerQty.value && tripDuration>0) {
+    console.log('yaboi')
+    updatePlanCosts(currentDestination, tripDuration, );
+  }
 }
 
 // travelerQty.onchange = function() {

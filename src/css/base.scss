@@ -152,7 +152,8 @@ h2 {
 }
 
 .chosen-destination {
-  height: 38vh;
+  height: auto;
+  max-width: 100%;
   padding-top: 2em;
 
 }
