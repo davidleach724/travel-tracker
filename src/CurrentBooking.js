@@ -19,7 +19,7 @@ class CurrentBooking {
     this.lodgingCosts = this.formatToCurrency(this.duration * this.destination.estimatedLodgingCostPerDay)
     this.flightCosts = this.formatToCurrency(this.travelers * this.destination.estimatedFlightCostPerPerson)
     this.bookingCosts = this.formatToCurrency(((this.duration * this.destination.estimatedLodgingCostPerDay) + (this.travelers * this.destination.estimatedFlightCostPerPerson)) *.1)
-    this.totalCosts = this.lodgingCosts + this.flightCosts + this.bookingCosts
+    this.totalCosts = this.formatToCurrency(((this.duration * this.destination.estimatedLodgingCostPerDay) + (this.travelers * this.destination.estimatedFlightCostPerPerson)) *1.1)
   }
 
   formatToCurrency(amt) {

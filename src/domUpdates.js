@@ -79,6 +79,19 @@ let domUpdates = {
     let selectedDestination = document.getElementById('chosenDestination')
     selectedDestination.src= destination.image
     selectedDestination.alt = destination.alt
+  },
+
+  renderCurrentTripCosts(trip) {
+    let lodging = document.getElementById('lodgingCost')
+    let flight = document.getElementById('flightCost')
+    let booking = document.getElementById('bookingCost')
+    let total = document.getElementById('totalCost')
+
+    lodging.innerText = `Total Lodging: ${trip.lodgingCosts}`
+    flight.innerText = `Total Flight: ${trip.flightCosts}`
+    booking.innerText = `Booking Fees: ${trip.bookingCosts}`
+    total.innerText = `TOTAL COST: ${trip.totalCosts}`
+
   }
 }
 

@@ -99,6 +99,6 @@ function checkUserInputs() {
   if (destinationMenu.value != 'none' && travelerQty.value && tripDuration>0) {
     let currentTrip = new CurrentBooking(travelerData, newTripId, currentDestination, startDate.value, endDate.value, tripDuration, travelerQty.value)
     console.log(currentTrip)
-    // domUpdates.renderCurrentTripCosts(currentTrip);
+    domUpdates.renderCurrentTripCosts(currentTrip);
   }
 }
