@@ -1,6 +1,3 @@
-@import "node_modules/@glidejs/glide/src/assets/sass/glide.core";
-@import "node_modules/@glidejs/glide/src/assets/sass/glide.theme";
-
 /*Sass Color Palette*/
 $primary-color-dark:   #0288D1;
 $primary-color:        #03A9F4;
@@ -111,7 +108,7 @@ main {
 .container {
   display: flex;
   flex-direction: column;
-  height: 450px;
+  height: 470px;
   width: 90%;
   margin: 15px;
   border-radius: 15px;
@@ -205,6 +202,7 @@ h2 {
 .past-body, .pending-body, .upcoming-body {
   display: flex;
   flex-direction: row;
+  overflow: auto;
 }
 
 .card-container {
@@ -213,7 +211,7 @@ h2 {
   box-shadow:  5px 5px 8px #cccccc,
                -5px -5px 8px #ffffff;
   height: 390px;
-  width: 300px;
+  min-width: 300px;
   display: flex;
   flex-direction: column;
   justify-content: center;

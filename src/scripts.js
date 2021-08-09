@@ -61,7 +61,7 @@ bookButton.addEventListener('click', function() {
 
 // Global variables
 let allTravelerData, travelerData, allTrips, destinationData, travelerTrips, newTripId, currentTrip;
-let userID = 38
+let userID = 44
 
 // Functions
 const gatherData = () => {

@@ -97,7 +97,7 @@ let domUpdates = {
   renderTotalSpentYear(amt, year) {
     let totalSpent = document.getElementById('totalSpentYear')
 
-    totalSpent.innerText = `It's' been a good year! You've spent $${amt} on experiences in ${year}`
+    totalSpent.innerText = `It's' been a good year! You've spent $${amt.toFixed(2)} on experiences in ${year}`
   }
 }
 
