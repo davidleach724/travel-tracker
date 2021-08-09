@@ -87,10 +87,10 @@ let domUpdates = {
     let booking = document.getElementById('bookingCost')
     let total = document.getElementById('totalCost')
 
-    lodging.innerText = `Total Lodging: ${trip.lodgingCosts}`
-    flight.innerText = `Total Flight: ${trip.flightCosts}`
-    booking.innerText = `Booking Fees: ${trip.bookingCosts}`
-    total.innerText = `TOTAL COST: ${trip.totalCosts}`
+    lodging.innerText = `${trip.lodgingCosts}`
+    flight.innerText = `${trip.flightCosts}`
+    booking.innerText = `${trip.bookingCosts}`
+    total.innerText = `${trip.totalCosts}`
 
   }
 }
