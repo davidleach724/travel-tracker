@@ -96,6 +96,7 @@ const generateSingleTravelerData = (userID) => {
   
   domUpdates.renderUserName(travelerData);
   domUpdates.renderTravelCards(travelerData);
+  domUpdates.renderTotalSpentYear(travelerData.totalSpent, travelerData.currentYear)
 }
 
 function checkUserInputs() {
