@@ -61,7 +61,7 @@ bookButton.addEventListener('click', function() {
 
 // Global variables
 let allTravelerData, travelerData, allTrips, destinationData, travelerTrips, newTripId, currentTrip;
-let userID = 38
+let userID = 44
 
 // Functions
 const gatherData = () => {
@@ -96,6 +96,7 @@ const generateSingleTravelerData = (userID) => {
   
   domUpdates.renderUserName(travelerData);
   domUpdates.renderTravelCards(travelerData);
+  domUpdates.renderTotalSpentYear(travelerData.totalSpent, travelerData.currentYear)
 }
 
 function checkUserInputs() {

@@ -92,7 +92,12 @@ let domUpdates = {
     flight.innerText = `${trip.flightCosts}`
     booking.innerText = `${trip.bookingCosts}`
     total.innerText = `${trip.totalCosts}`
+  },
 
+  renderTotalSpentYear(amt, year) {
+    let totalSpent = document.getElementById('totalSpentYear')
+
+    totalSpent.innerText = `It's' been a good year! You've spent $${amt.toFixed(2)} on experiences in ${year}`
   }
 }
 

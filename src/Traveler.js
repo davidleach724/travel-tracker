@@ -9,6 +9,8 @@ class Traveler {
     this.upcomingTrips = []
     this.pastTrips = []
     this.currentDate = moment().format('LL')
+    this.currentYear = moment().format('YYYY')
+    this.totalSpent = 0;
     this.populateUserTrips(trips, destinations)
   }
 
@@ -34,7 +36,12 @@ class Traveler {
           currency: 'USD',
           maximumFractionDigits: 0
         }).format(((trip.duration * currentDest.estimatedLodgingCostPerDay) + (trip.travelers * currentDest.estimatedFlightCostPerPerson))*1.1)
-      }  
+      }
+
+      if (tripObj.startDate.includes(this.currentYear)) {
+        this.totalSpent += ((tripObj.duration * currentDest.estimatedLodgingCostPerDay) + (tripObj.travelers * currentDest.estimatedFlightCostPerPerson))*1.1
+      }
+
       if (tripObj.status === 'pending') {
         this.pendingTrips.push(tripObj)
       } else if (moment(trip.date.replaceAll('/', '-')).isAfter(moment().format('YYYY-MM-DD'))) {
@@ -44,6 +51,14 @@ class Traveler {
       }
     })
   }
+
+  // determineTotalSpent(trip, currentDest) {
+  //   let currentYear = moment().format('YYYY')
+
+  //   if (tripObj.startDate.includes(currentYear)) {
+  //     this.totalSpent += ((tripObj.duration * currentDest.estimatedLodgingCostPerDay) + (tripObj.travelers * currentDest.estimatedFlightCostPerPerson))*1.1
+  //   }
+  // }
 }
 
 export default Traveler;
