@@ -40,8 +40,56 @@
     <div class="jump-to" id="plan"></div>
     <section class="plan container">
       <h2>PLAN A TRIP</h2>
-      <div class="plan-body">
-      </div> 
+      <div class="plan-body" id="planBody">
+        <div class="plan-left">
+          <div class ="choose-destination-header">
+            <label for="destination-list">Choose a Destination:</label>
+            <select name="destination-list" id="destinationList" required>
+              <option value="none" selected disabled hidden>Select an Option</option>
+            </select>
+          </div>
+          <img src='./images/choose_destination.png' alt="chosen destination" id="chosenDestination" class="chosen-destination">
+        </div>
+        <div class="plan-right">
+          <form class="trip-inputs">
+            <div class="calendar-start">
+              <label for="startDate">Start date:</label>
+              <input type="date" id="startDate" name="trip-start"
+              value="2018-07-22"
+              min="2018-01-01" max="2030-12-31">
+            </div>
+            <div class="calendar-end">
+              <label for="endDate">End date:</label>
+              <input type="date" id="endDate" name="trip-end"
+              value="2018-07-22"
+              min="2018-01-01" max="2030-12-31">
+            </div>
+            <div class="traveler-quantity">
+              <label for="quantity">Travelers:</label>
+              <input type="number" id="quantity" name="quantity" min="1" max="20">
+            </div>
+          </form>
+          <div class="costs-display">
+            <div class="display-totals">
+              <h4 class="individual-amounts">Total Lodging:<h4>
+              <h4 class="costs" id="lodgingCost"></h4>
+            </div>
+            <div class="display-totals">
+              <h4 class="individual-amounts">Total Flight:</h4>
+              <h4 class="costs" id="flightCost"></h4>
+            </div>
+            <div class="display-totals">
+              <h4 class="individual-amounts">Booking Fees:</h4>
+              <h4 class="costs" id="bookingCost"></h4>
+            </div>
+            <div class="display-totals">
+              <h5 class="total-cost">TOTAL COST:</h5>
+              <h4 class="total-cost" id="totalCost"></h4>
+            </div>
+          </div>
+          <button id="bookTrip">BOOK TRIP</button>
+        </div> 
+      </div>
     </section>
     <div class="jump-to" id="pending"></div>
     <section class="pending container">
@@ -62,42 +110,16 @@
       <h2>PAST TRIPS</h2>
       <div class="past-body" id="pastBody">
         <!-- PENDING CARD SECTION -->
-
-
-      <!-- <div class="glide-container">
-        <div class="glide">
-          <div class="glide__track" data-glide-el="track">
-            <ul class="glide__slides">
-              <li class="glide__slide">0</li>
-              <li class="glide__slide">1</li>
-              <li class="glide__slide">2</li>
-            </ul>
-          </div>
-          <div class="glide__arrows" data-glide-el="controls">
-            <button class="glide__arrow glide__arrow--left" data-glide-dir="<">prev</button>
-            <button class="glide__arrow glide__arrow--right" data-glide-dir=">">next</button>
-          </div>
-        </div> 
-      </div> -->
-      <div class="past-body"></div>
+      </div>
     </section>
   </main>
-
-
   <footer>
     <img src="./images/copyright_website.png" alt="copyright 2021 iusedto.party" id="copyRight">
     <img src="./images/glasses.png" alt="glasses sketch" width="150px" height="75px">
   </footer>
   <!-- Do not include the index.js or main.bundle.js file here - it is done automatically by the webpack server -->
-  <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
-<!-- <script>
-  const config = {
-    type: 'carousel',
-    perView: 1
-  }
-  new Glide('.glide', config).mount()
-</script> -->
+
 <script src="bundle.js"></script>
-<!-- <script src="https://momentjs.com/downloads/moment.min.js"></script> -->
+
 </body>
 </html>

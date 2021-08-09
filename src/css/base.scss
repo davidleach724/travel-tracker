@@ -118,10 +118,6 @@ main {
   background-color: $background-container-color;
 }
 
-.plan {
-  margin-top: 21vh;
-}
-
 h2 {
   display: flex;
   justify-content: center;
@@ -129,10 +125,78 @@ h2 {
   height: 15%
 }
 
-plan-body {
+// Plan a Trip Section
+.plan {
+  margin-top: 21vh;
+  
+}
+
+.plan-body {
+  display: flex;
   height: 85%;
 }
 
+.plan-left, .plan-right{
+  display: flex;
+  flex-direction: column;
+  // justify-content: space-evenly;
+  align-items: center;
+  height: 45vh;
+  width: 45vw;
+  margin: 5px;
+}
+
+#destinationList{
+  margin-left: 8px;
+  width: 20vw;
+}
+
+.chosen-destination {
+  height: 30vh;
+  max-width: 100%;
+  padding-top: 2em;
+}
+
+.trip-inputs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.calendar-start, .calendar-end {
+  display: flex;
+  flex-direction: row;
+  margin: 10px;
+  align-items: center;
+}
+
+#endDate, #startDate, #quantity{
+  margin-left: 8px;
+}
+
+.costs-display {
+  display: flex;
+  flex-direction: column;
+}
+
+.display-totals {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.individual-amounts, .costs {
+  font-size: 1.25em;
+  margin: 5px;
+}
+
+.total-cost {
+  font-size: 1.5em;
+  margin-top: 15px;
+}
+
+// PREVIOUS TRIPS
 .past {
   display: flex;
   flex-direction: column;
