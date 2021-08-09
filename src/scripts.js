@@ -31,6 +31,7 @@ let destinationMenu = document.getElementById('destinationList');
 let startDate = document.getElementById('startDate')
 let endDate = document.getElementById('endDate')
 let travelerQty = document.getElementById('quantity')
+let bookButton = document.getElementById('bookTrip')
 
 let currentDestination;
 
@@ -54,8 +55,12 @@ travelerQty.onchange = function() {
   checkUserInputs()
 }
 
+bookButton.addEventListener('click', function() {
+  bookUserTrip()
+});
+
 // Global variables
-let allTravelerData, travelerData, allTrips, destinationData, travelerTrips, newTripId;
+let allTravelerData, travelerData, allTrips, destinationData, travelerTrips, newTripId, currentTrip;
 let userID = 38
 
 // Functions
@@ -97,8 +102,38 @@ function checkUserInputs() {
   let tripDuration = moment(endDate.value).diff(startDate.value, 'days');
 
   if (destinationMenu.value != 'none' && travelerQty.value && tripDuration>0) {
-    let currentTrip = new CurrentBooking(travelerData, newTripId, currentDestination, startDate.value, endDate.value, tripDuration, travelerQty.value)
-    console.log(currentTrip)
+    currentTrip = new CurrentBooking(travelerData, newTripId, currentDestination, startDate.value, endDate.value, tripDuration, travelerQty.value)
     domUpdates.renderCurrentTripCosts(currentTrip);
+    return true
   }
+  return false
 }
+
+  function bookUserTrip() {
+    if (checkUserInputs()) {
+      // console.log({id: currentTrip.tripID, userID: currentTrip.user.id, destinationID: currentTrip.destination.id, travelers: currentTrip.travelers, date: currentTrip.startDate.replaceAll('-', '/'), duration: currentTrip.duration, status: currentTrip.status, suggestedActivities: currentTrip.destination.suggestedActivities})
+      console.log(currentTrip.destination)
+      fetch('http://localhost:3001/api/v1/trips', {
+        method: 'POST',
+        body: JSON.stringify({id: currentTrip.tripID, userID: currentTrip.user.id, destinationID: currentTrip.destination.id, travelers: currentTrip.travelers, date: currentTrip.startDate.replaceAll('-', '/'), duration: currentTrip.duration, status: currentTrip.status, suggestedActivities: []}),
+        headers: {'Content-Type': 'application/json'}
+      })
+      .then(response => checkForError(response))
+      .then(gatherData())
+      .catch(err => console.log(err))
+    } else {
+      return
+    }
+  }
+
+  function checkForError(res) {
+    if (!res.ok) {
+      throw new Error('An Error Occured - this is where the message goes')
+    } else {
+      return res.json()
+    }
+  }
+
+  function refreshDom() {
+    domUpdates.renderTravelCards(travelerData);
+  }

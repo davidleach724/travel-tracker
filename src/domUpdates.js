@@ -46,6 +46,7 @@ let domUpdates = {
   },
 
   createCardContent (data, section) {
+    section.innerHTML = '';
     data.forEach(trip => {
       section.innerHTML += `
       <div class="card-container" id="cardContainer">
