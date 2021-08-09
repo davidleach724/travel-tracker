@@ -2,9 +2,24 @@ let domUpdates = {
   determineTimeOfDay () {
     let time = new Date();
     let hour = time.getHours();
+    this.setCalendarDate(time);
     if(hour < 10) {return 'Good Morning'}
     if(hour < 17) {return 'Good Afternoon'}
     return 'Good Evening'
+  },
+
+  setCalendarDate(time) {
+    let startDate = document.getElementById('startDate');
+    let endDate = document.getElementById('endDate');
+    let year = time.getFullYear();
+    let month = time.getMonth()+1;
+    if (month < 10) {month = '0'+ month}
+    let day = time.getDate();
+    if (day < 10) {day = '0' + day}
+    startDate.value=`${year}-${month}-${day}`
+    startDate.min=`${year}-${month}-${day}`
+    endDate.value=`${year}-${month}-${day}`
+    endDate.min=`${year}-${month}-${day}`
   },
 
   renderUserName (travelerData) {
