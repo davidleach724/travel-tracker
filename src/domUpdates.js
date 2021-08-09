@@ -22,6 +22,12 @@ let domUpdates = {
     endDate.min=`${year}-${month}-${day}`
   },
 
+  updateEndDateMin(minDate) {
+    let endDate = document.getElementById('endDate');
+    endDate.value = minDate;
+    endDate.min = minDate;
+  },
+
   renderUserName (travelerData) {
     let userWelcome = document.getElementById('userGreeting');
     let firstName = travelerData.name.split(' ')[0]

@@ -26,10 +26,15 @@ import domUpdates from './domUpdates'
 
 // Event Listeners
 let destinationMenu = document.getElementById('destinationList');
+let startDate = document.getElementById('startDate')
 
 destinationMenu.onchange = function() {
   let selectDestination = destinationMenu.value;
   domUpdates.updateDestinationPicture(destinationData.getDestinationByName(selectDestination));
+}
+
+startDate.onchange = function() {
+  domUpdates.updateEndDateMin(startDate.value)
 }
 
 // Global variables
