@@ -1,5 +1,6 @@
 // An example of how you tell webpack to use a CSS (SCSS) file
 import './css/base.scss';
+import moment from 'moment';
 
 // An example of how you tell webpack to use an image (also need to link to it in the index.html)
 import './images/turing-logo.png'
@@ -27,21 +28,27 @@ import domUpdates from './domUpdates'
 // Event Listeners
 let destinationMenu = document.getElementById('destinationList');
 let startDate = document.getElementById('startDate')
+// let travelerQty = document.getElementById('quantity')
+
 
 destinationMenu.onchange = function() {
   let selectDestination = destinationMenu.value;
-  domUpdates.updateDestinationPicture(destinationData.getDestinationByName(selectDestination));
+  let currentDestination = destinationData.getDestinationByName(selectDestination)
+  domUpdates.updateDestinationPicture(currentDestination);
 }
 
 startDate.onchange = function() {
   domUpdates.updateEndDateMin(startDate.value)
 }
 
+// travelerQty.onchange = function() {
+//   let currentDestination = destinationData.getDestinationByName(destinationMenu.value)
+//   domUpdates.updatePlanCosts(currentDestination, travelerQty.value)
+// }
+
 // Global variables
 let allTravelerData, travelerData, allTrips, destinationData, travelerTrips;
 let userID = 38
-
-
 
 // Functions
 const gatherData = () => {
