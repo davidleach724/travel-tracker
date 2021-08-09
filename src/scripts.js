@@ -91,7 +91,6 @@ const generateSingleTravelerData = (userID) => {
   
   domUpdates.renderUserName(travelerData);
   domUpdates.renderTravelCards(travelerData);
-  // console.log(travelerData);
 }
 
 function checkUserInputs() {
@@ -99,7 +98,7 @@ function checkUserInputs() {
 
   if (destinationMenu.value != 'none' && travelerQty.value && tripDuration>0) {
     let currentTrip = new CurrentBooking(travelerData, newTripId, currentDestination, startDate.value, endDate.value, tripDuration, travelerQty.value)
-    console.log(currentTrip);
-    // updatePlanCosts(currentDestination, tripDuration, );
+    console.log(currentTrip)
+    // domUpdates.renderCurrentTripCosts(currentTrip);
   }
 }

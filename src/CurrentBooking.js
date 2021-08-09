@@ -16,12 +16,20 @@ class CurrentBooking {
   }
 
   populateCurrentTripCosts() {
-    this.lodgingCosts = (this.duration * this.destination.estimatedLodgingCostPerDay)
-    this.flightCosts = (this.travelers * this.destination.estimatedFlightCostPerPerson)
-    this.bookingCosts = (this.lodgingCosts + this.flightCosts)*.1
-    this.totalCosts = (this.lodgingCosts + this.flightCosts + this.bookingCosts)
+    this.lodgingCosts = this.formatToCurrency(this.duration * this.destination.estimatedLodgingCostPerDay)
+    this.flightCosts = this.formatToCurrency(this.travelers * this.destination.estimatedFlightCostPerPerson)
+    this.bookingCosts = this.formatToCurrency(((this.duration * this.destination.estimatedLodgingCostPerDay) + (this.travelers * this.destination.estimatedFlightCostPerPerson)) *.1)
+    this.totalCosts = this.lodgingCosts + this.flightCosts + this.bookingCosts
   }
 
+  formatToCurrency(amt) {
+    let amount = new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: 'USD',
+      maximumFractionDigits: 0
+    }).format(amt)
+    return amount
+  }
 }
 
 export default CurrentBooking
