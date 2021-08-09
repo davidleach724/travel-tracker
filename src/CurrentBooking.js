@@ -12,13 +12,13 @@ class CurrentBooking {
     this.flightCosts = 0;
     this.bookingCosts = 0;
     this.totalCosts = 0;
-    this.populateCurrentTripCosts(destination)
+    this.populateCurrentTripCosts()
   }
 
-  populateCurrentTripCosts(destination) {
+  populateCurrentTripCosts() {
     this.lodgingCosts = (this.duration * this.destination.estimatedLodgingCostPerDay)
     this.flightCosts = (this.travelers * this.destination.estimatedFlightCostPerPerson)
-    this.bookingCosts = (this.lodgingCosts + this.flightCosts)*1
+    this.bookingCosts = (this.lodgingCosts + this.flightCosts)*.1
     this.totalCosts = (this.lodgingCosts + this.flightCosts + this.bookingCosts)
   }
 

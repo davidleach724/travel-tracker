@@ -1,6 +1,6 @@
 // An example of how you tell webpack to use a CSS (SCSS) file
 import './css/base.scss';
-import moment from 'moment';
+import moment, { duration } from 'moment';
 
 // An example of how you tell webpack to use an image (also need to link to it in the index.html)
 import './images/turing-logo.png'
@@ -24,6 +24,7 @@ import Destinations from './Destinations';
 import Traveler from './Traveler';
 import Trips from './Trips';
 import domUpdates from './domUpdates'
+import CurrentBooking from './CurrentBooking';
 
 // Event Listeners
 let destinationMenu = document.getElementById('destinationList');
@@ -54,7 +55,7 @@ travelerQty.onchange = function() {
 }
 
 // Global variables
-let allTravelerData, travelerData, allTrips, destinationData, travelerTrips;
+let allTravelerData, travelerData, allTrips, destinationData, travelerTrips, newTripId;
 let userID = 38
 
 // Functions
@@ -76,6 +77,7 @@ const generateAllTravelerData = (data) => {
 
 const generateTripsData = (data) => {
   allTrips = new Trips(data);
+  newTripId = allTrips.findLatestTrip() + 1
   travelerTrips = allTrips.filterTripsById(userID)
 }
 
@@ -89,14 +91,15 @@ const generateSingleTravelerData = (userID) => {
   
   domUpdates.renderUserName(travelerData);
   domUpdates.renderTravelCards(travelerData);
-  console.log(travelerData);
+  // console.log(travelerData);
 }
 
 function checkUserInputs() {
   let tripDuration = moment(endDate.value).diff(startDate.value, 'days');
 
   if (destinationMenu.value != 'none' && travelerQty.value && tripDuration>0) {
-    console.log('yaboi')
-    updatePlanCosts(currentDestination, tripDuration, );
+    let currentTrip = new CurrentBooking(travelerData, newTripId, currentDestination, startDate.value, endDate.value, tripDuration, travelerQty.value)
+    console.log(currentTrip);
+    // updatePlanCosts(currentDestination, tripDuration, );
   }
 }
