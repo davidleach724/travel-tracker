@@ -50,14 +50,30 @@
           <img src='./images/choose_destination.png' alt="chosen destination" id="chosenDestination" class="chosen-destination">
         </div>
         <div class="plan-right">
-          <label for="start">Start date:</label>
-          <input type="date" id="startDate" name="trip-start"
+          <form class="trip-inputs">
+            <div class="calendar-start">
+              <label for="startDate">Start date:</label>
+              <input type="date" id="startDate" name="trip-start"
               value="2018-07-22"
               min="2018-01-01" max="2030-12-31">
-              <label for="start">End date:</label>
-          <input type="date" id="endDate" name="trip-end"
+            </div>
+            <div class="calendar-end">
+              <label for="endDate">End date:</label>
+              <input type="date" id="endDate" name="trip-end"
               value="2018-07-22"
               min="2018-01-01" max="2030-12-31">
+            </div>
+            <div class="traveler-quantity">
+              <label for="quantity">Travelers:</label>
+              <input type="number" id="quantity" name="quantity" min="1" max="20">
+            </div>
+          </form>
+          <div class="costs-display">
+            <h4 class="individual-amounts">Total Lodging: </h4>
+            <h4 class="individual-amounts">Total Flight: </h4>
+            <h4 class="individual-amounts">Booking Fees: </h4>
+            <h5 class="total-cost">TOTAL COST: </h5>
+          </div>
         </div> 
       </div>
     </section>
