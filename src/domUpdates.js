@@ -117,6 +117,26 @@ let domUpdates = {
     total.innerText = ''
 
     travelers.value = ''
+  },
+
+  showLogonError(prompt) {
+    let conflictPrompt = document.getElementById('conflictProblem')
+
+    conflictPrompt.innerText = prompt;
+  },
+
+  hideLogonForm() {
+    let logOnForm = document.getElementById('logOnForm');
+    let nav = document.getElementById('navBar')
+    let navWave = document.getElementById('navWave')
+    let mainSection = document.getElementById('mainSection')
+    let footer = document.getElementById('footer')
+
+    logOnForm.classList.add('hidden')
+    nav.classList.remove('hidden')
+    navWave.classList.remove('hidden')
+    mainSection.classList.remove('hidden')
+    footer.classList.remove('hidden')
   }
 }
 

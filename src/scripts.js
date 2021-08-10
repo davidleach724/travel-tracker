@@ -13,10 +13,10 @@ import './images/copyright_website.png'
 import './images/choose_destination.png'
 
 // Import Api call functions
-import {getAllTravelers} from './apiCalls';
-import {getSingleTraveler} from './apiCalls';
-import {getAllTrips} from './apiCalls';
-import {getAllDestinations} from './apiCalls';
+import { getAllTravelers } from './apiCalls';
+import { getSingleTraveler } from './apiCalls';
+import { getAllTrips } from './apiCalls';
+import { getAllDestinations } from './apiCalls';
 
 // Import classes
 import AllTravelers from './AllTravelers';
@@ -32,9 +32,15 @@ let startDate = document.getElementById('startDate')
 let endDate = document.getElementById('endDate')
 let travelerQty = document.getElementById('quantity')
 let bookButton = document.getElementById('bookTrip')
-
+let usernameInput = document.getElementById('username')
+let passwordInput = document.getElementById('password')
+let submitButton = document.getElementById('submitButton')
 let currentDestination;
 
+
+submitButton.addEventListener('click', function() {
+  checkUserCredentials()
+})
 
 destinationMenu.onchange = function() {
   let selectDestination = destinationMenu.value;
@@ -60,8 +66,9 @@ bookButton.addEventListener('click', function() {
 });
 
 // Global variables
-let allTravelerData, travelerData, allTrips, destinationData, travelerTrips, newTripId, currentTrip;
-let userID = 3
+let allTravelerData, travelerData, allTrips, destinationData, travelerTrips, newTripId, currentTrip, userList;
+
+let userID = 33;
 
 // Functions
 const gatherData = () => {
@@ -78,6 +85,8 @@ gatherData()
 
 const generateAllTravelerData = (data) => {
   allTravelerData = new AllTravelers(data);
+  userList = allTravelerData.generateUserList();
+  // console.log(userList);
 }
 
 const generateTripsData = (data) => {
@@ -131,5 +140,21 @@ function checkUserInputs() {
       throw new Error('An Error Occured - this is where the message goes')
     } else {
       return res.json()
+    }
+  }
+
+  function checkUserCredentials() {
+    let errorMessage;
+    let usernameID = parseInt(usernameInput.value.split('traveler')[1])
+    if (!userList.includes(usernameID)) {
+      errorMessage = 'Please enter a valid username ex: traveler + ID'
+      domUpdates.showLogonError(errorMessage)
+    } else if (passwordInput.value != 'travel'){
+      errorMessage = 'Please enter a valid password'
+      domUpdates.showLogonError(errorMessage)
+    } else {
+      userID = usernameID
+      gatherData()
+      domUpdates.hideLogonForm()
     }
   }
