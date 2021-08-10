@@ -1,4 +1,4 @@
-const destinationTestData = [{
+const destinationTestData = {'destinations': [{
   "id": 1,
   "destination": "Lima, Peru",
   "estimatedLodgingCostPerDay": 70,
@@ -75,6 +75,6 @@ const destinationTestData = [{
   "estimatedLodgingCostPerDay": 90,
   "estimatedFlightCostPerPerson": 450,
   "image": "https://images.unsplash.com/photo-1535776142635-8fa180c46af7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2756&q=80",
-}]
+}]}
 
-export default {destinationTestData}
+export default destinationTestData

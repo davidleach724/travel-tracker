@@ -1,19 +1,20 @@
 const chai = require('chai');
 const expect = chai.expect;
 
-import Activity from '../src/Activity';
-import activityData from '../src/data/activityData';
+import Destinations from '../src/Destinations'
+import destinationTestData from './test_data/destination-test-data'
 
-describe('Activity', () => {
-  let activity;
+describe('Destinations', () => {
+  let destinationData;
 
   beforeEach(() => {
-    activity = new Activity(activityData, 1);
+    destinationData = new Destinations(destinationTestData);
   });
 
   it('should be a function', () => {
-    expect(Activity).to.be.a('function');
+    console.log(destinationData.data)
+    expect(Destinations).to.be.a('function');
   })
 
-  
+
 })
