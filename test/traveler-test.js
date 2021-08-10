@@ -4,6 +4,7 @@ const expect = chai.expect;
 import Traveler from '../src/Traveler'
 import Destinations from '../src/Destinations';
 import Trips from '../src/Trips';
+import CurrentBooking from '../src/CurrentBooking';
 import tripTestData from '../test/test_data/trips-test-data'
 import destinationTestData from './test_data/destination-test-data'
 
@@ -21,7 +22,6 @@ describe('Single Traveler', () => {
     destinationData = new Destinations(destinationTestData);
     tripData = new Trips(tripTestData)
     userTrips = tripData.filterTripsById(3)
-
     travelerData = new Traveler(currentUser, userTrips, destinationData)
   });
 
