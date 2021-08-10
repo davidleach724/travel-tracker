@@ -93,11 +93,10 @@ const genereateDestinationData = (data) => {
 
 const generateSingleTravelerData = (userID) => {
   travelerData = new Traveler(userID, travelerTrips, destinationData);
-  console.log(userID, travelerTrips, destinationData)
+
   domUpdates.renderUserName(travelerData);
   domUpdates.renderTravelCards(travelerData);
   domUpdates.renderTotalSpentYear(travelerData.totalSpent, travelerData.currentYear)
-  console.log(travelerData);
 }
 
 function checkUserInputs() {
