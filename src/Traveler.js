@@ -34,7 +34,7 @@ class Traveler {
         'totalCost': new Intl.NumberFormat('en-US', {
           style: 'currency',
           currency: 'USD',
-          maximumFractionDigits: 0
+          maximumFractionDigits: 2
         }).format(((trip.duration * currentDest.estimatedLodgingCostPerDay) + (trip.travelers * currentDest.estimatedFlightCostPerPerson))*1.1)
       }
 
@@ -51,14 +51,6 @@ class Traveler {
       }
     })
   }
-
-  // determineTotalSpent(trip, currentDest) {
-  //   let currentYear = moment().format('YYYY')
-
-  //   if (tripObj.startDate.includes(currentYear)) {
-  //     this.totalSpent += ((tripObj.duration * currentDest.estimatedLodgingCostPerDay) + (tripObj.travelers * currentDest.estimatedFlightCostPerPerson))*1.1
-  //   }
-  // }
 }
 
 export default Traveler;
