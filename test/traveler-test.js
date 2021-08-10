@@ -33,31 +33,31 @@ describe('Single Traveler', () => {
     expect(travelerData).to.be.an('object');
   })
 
-  it.skip('should ', () => {
-    expect(travelerData).to.be.an('object');
+  it('should store the current user ID', () => {
+    expect(travelerData.id).to.equal(3);
   })
 
-  it.skip('should ', () => {
-    expect(travelerData).to.be.an('object');
+  it('should capture the user name', () => {
+    expect(travelerData.name).to.equal("Sibby Dawidowitsch");
   })
 
-  it.skip('should ', () => {
-    expect(travelerData).to.be.an('object');
+  it('should capture the traveler type', () => {
+    expect(travelerData.travelerType).to.equal('shopper');
   })
 
-  it.skip('should ', () => {
-    expect(travelerData).to.be.an('object');
+  it('should store any pending trips', () => {
+    expect(travelerData.pendingTrips.length).to.equal(0);
   })
 
-  it.skip('should ', () => {
-    expect(travelerData).to.be.an('object');
+  it('should store any upcoming trips', () => {
+    expect(travelerData.upcomingTrips.length).to.equal(1);
   })
 
-  it.skip('should ', () => {
-    expect(travelerData).to.be.an('object');
+  it('should store any past trips', () => {
+    expect(travelerData.pastTrips.length).to.equal(6);
   })
 
-  
+
 
 })
 

@@ -51,14 +51,6 @@ class Traveler {
       }
     })
   }
-
-  // determineTotalSpent(trip, currentDest) {
-  //   let currentYear = moment().format('YYYY')
-
-  //   if (tripObj.startDate.includes(currentYear)) {
-  //     this.totalSpent += ((tripObj.duration * currentDest.estimatedLodgingCostPerDay) + (tripObj.travelers * currentDest.estimatedFlightCostPerPerson))*1.1
-  //   }
-  // }
 }
 
 export default Traveler;
