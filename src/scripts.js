@@ -112,15 +112,13 @@ function checkUserInputs() {
 
   function bookUserTrip() {
     if (checkUserInputs()) {
-      // console.log({id: currentTrip.tripID, userID: currentTrip.user.id, destinationID: currentTrip.destination.id, travelers: currentTrip.travelers, date: currentTrip.startDate.replaceAll('-', '/'), duration: currentTrip.duration, status: currentTrip.status, suggestedActivities: currentTrip.destination.suggestedActivities})
-      console.log(currentTrip.destination)
       fetch('http://localhost:3001/api/v1/trips', {
         method: 'POST',
         body: JSON.stringify({id: currentTrip.tripID, userID: currentTrip.user.id, destinationID: currentTrip.destination.id, travelers: currentTrip.travelers, date: currentTrip.startDate.replaceAll('-', '/'), duration: currentTrip.duration, status: currentTrip.status, suggestedActivities: []}),
         headers: {'Content-Type': 'application/json'}
       })
       .then(response => checkForError(response))
-      .then(gatherData())
+      .then(setTimeout(function() {gatherData()}, 250))
       .catch(err => console.log(err))
     } else {
       return
@@ -133,8 +131,4 @@ function checkUserInputs() {
     } else {
       return res.json()
     }
-  }
-
-  function refreshDom() {
-    domUpdates.renderTravelCards(travelerData);
   }
