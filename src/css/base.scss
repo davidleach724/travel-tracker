@@ -244,3 +244,48 @@ footer {
 #copyRight {
   height:40%;
 }
+
+// Media Queries
+
+@media only screen and (max-width: 1200px) {
+  h1 {
+    font-size: 100%;
+  }
+}
+
+@media only screen and (max-width: 780px) {
+  #planeSketch {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 580px) {
+  h1 {
+    display: none;
+  }
+
+  .chosen-destination {
+    display: none;
+  }
+
+  .plan-body {
+    height: 65%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .choose-destination-header {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .costs-display {
+    font-size: smaller;
+  }
+
+  .individual-amounts, .costs {
+    margin: 2px;
+    font-size: smaller;
+  }
+}
