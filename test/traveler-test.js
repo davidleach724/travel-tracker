@@ -44,19 +44,24 @@ describe('Single Traveler', () => {
     expect(travelerData.travelerType).to.equal('shopper');
   })
 
-  it('should store any pending trips', () => {
+  it('should store any pending trips based on status', () => {
     expect(travelerData.pendingTrips.length).to.equal(0);
   })
 
-  it('should store any upcoming trips', () => {
+  it('should store any upcoming trips based on date', () => {
     expect(travelerData.upcomingTrips.length).to.equal(1);
   })
 
-  it('should store any past trips', () => {
+  it('should store any past trips based on date', () => {
     expect(travelerData.pastTrips.length).to.equal(6);
   })
 
+  it('should capture the current year', () => {
+    expect(travelerData.currentYear).to.equal('2021')
+  })
 
-
+  it('should accumulate total cost data for that current year', () => {
+    expect(travelerData.totalSpent).to.equal(0)
+  })
 })
 
