@@ -18,6 +18,10 @@ $card-background-color: #f1f4f6;
   scroll-padding-top: 15vh;
 }
 
+.hidden {
+  display: none!important;
+}
+
 body {
   background: $primary-color;
   font-family: 'Roboto', sans-serif;
@@ -104,6 +108,29 @@ nav {
 
 .custom-shape-divider-top-1628440474 .shape-fill {
   fill: #0288D1;
+}
+
+//LOGIN SECTION
+.log-on-form {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  // padding: 15%;
+}
+
+#logoLogOn {
+  margin-top: 3em;
+  height: 10vh;
+  width: auto;
+}
+
+#planeLogOn {
+  height: 15%;
+  width: -webkit-fill-available;
+  margin: 20px;
 }
 
 // MAIN SECTION
