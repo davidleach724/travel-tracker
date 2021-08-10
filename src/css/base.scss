@@ -46,6 +46,12 @@ nav {
   padding: 10px
 }
 
+.center-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .right-nav {
   justify-content: space-between;
 }
@@ -53,7 +59,7 @@ nav {
 .nav-links{
   display: flex;
   flex-direction: row;
-  font-size: 3vh;
+  font-size: 3.25vh;
   list-style-type: none;
   & a {
     color: $primary-text-color;
@@ -67,13 +73,15 @@ nav {
 }
 
 #planeSketch {
-  height: 13vh;
+  height: auto;
+  max-height: 15vh;
   width: 100%;
 }
 
 
 #travelOnLogo {
-  height: 6vh;
+  height: auto;
+  max-height: 8vh;
   width: 60%
 }
 
@@ -149,7 +157,8 @@ h2 {
 }
 
 .chosen-destination {
-  height: 30vh;
+  height: auto;
+  max-height: 35vh;
   max-width: 100%;
   padding-top: 2em;
 }
@@ -264,7 +273,12 @@ footer {
     display: none;
   }
 
-  .chosen-destination {
+  .nav-links {
+    font-size: 3vh;
+    width: 100%;
+  }
+
+  .chosen-destination, .custom-shape-divider-top-1628440474, .shape-fill, .custom-shape-divider-top-1628440474 svg .custom-shape-divider-top-1628440474 {
     display: none;
   }
 
@@ -288,4 +302,6 @@ footer {
     margin: 2px;
     font-size: smaller;
   }
+
+ 
 }
