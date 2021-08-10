@@ -98,6 +98,16 @@ let domUpdates = {
     let totalSpent = document.getElementById('totalSpentYear')
 
     totalSpent.innerText = `It's' been a good year! You've spent $${amt.toFixed(2)} on experiences in ${year}`
+  },
+
+  revertChooseDestination() {
+    let travelers = document.getElementById('quantity')
+    let selectedDestination = document.getElementById('chosenDestination')
+    
+    selectedDestination.src = './images/choose_destination.png'
+    selectedDestination.alt = 'choose your destination sketch'
+
+    travelers.value = ''
   }
 }
 

@@ -120,6 +120,7 @@ function checkUserInputs() {
       })
       .then(response => checkForError(response))
       .then(setTimeout(function() {gatherData()}, 250))
+      .then(domUpdates.revertChooseDestination())
       .catch(err => console.log(err))
     } else {
       return
