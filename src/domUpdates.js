@@ -103,9 +103,18 @@ let domUpdates = {
   revertChooseDestination() {
     let travelers = document.getElementById('quantity')
     let selectedDestination = document.getElementById('chosenDestination')
+    let lodging = document.getElementById('lodgingCost')
+    let flight = document.getElementById('flightCost')
+    let booking = document.getElementById('bookingCost')
+    let total = document.getElementById('totalCost')
     
     selectedDestination.src = './images/choose_destination.png'
     selectedDestination.alt = 'choose your destination sketch'
+
+    lodging.innerText = ''
+    flight.innerText = ''
+    booking.innerText = ''
+    total.innerText = ''
 
     travelers.value = ''
   }
