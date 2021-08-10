@@ -20,7 +20,7 @@ describe('Destinations', () => {
   })
 
   it('should generate a list of destinations', () => {
-    expect(destinationData.getDestinationList().length).to.equal(10);
+    expect(destinationData.getDestinationList().length).to.equal(50);
   })
 
   it('should recall a destination by ID', () => {

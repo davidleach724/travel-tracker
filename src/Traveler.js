@@ -34,7 +34,7 @@ class Traveler {
         'totalCost': new Intl.NumberFormat('en-US', {
           style: 'currency',
           currency: 'USD',
-          maximumFractionDigits: 0
+          maximumFractionDigits: 2
         }).format(((trip.duration * currentDest.estimatedLodgingCostPerDay) + (trip.travelers * currentDest.estimatedFlightCostPerPerson))*1.1)
       }
 

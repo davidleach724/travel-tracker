@@ -2,13 +2,13 @@ const chai = require('chai');
 const expect = chai.expect;
 
 import AllTravelers from '../src/AllTravelers'
-import destinationTestData from './test_data/travelers-test-data'
+import travelerTestData from './test_data/travelers-test-data';
 
-describe.only('All Travelers', () => {
+describe('All Travelers', () => {
   let allTravelerData;
 
   beforeEach(() => {
-    allTravelerData = new AllTravelers(destinationTestData);
+    allTravelerData = new AllTravelers(travelerTestData);
   });
 
   it('should be a function', () => {
