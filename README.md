@@ -17,6 +17,16 @@ Please make sure your seat backs and tray tables are in their full upright posit
 
 
 ## See it in action
+#### Log On Menu
+![TravelOn_LogOn](https://user-images.githubusercontent.com/81774070/128967515-6527c425-4b42-450a-9f5c-0c17ce0bea0d.gif)
+
+
+#### Navigating the Site
+![TravelOn_Navigation](https://user-images.githubusercontent.com/81774070/128968610-fdeae60e-614f-44f8-b5aa-03404264530c.gif)
+
+#### Booking a Trip
+![TravelOn-BookTrip](https://user-images.githubusercontent.com/81774070/128968231-e99c9be4-020a-4880-9dd4-220ad635bdc1.gif)
+
 
 
 
