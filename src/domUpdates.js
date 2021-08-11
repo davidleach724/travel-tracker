@@ -69,6 +69,7 @@ let domUpdates = {
 
   generateDestinationList(destinationList) {
     let destinationMenu = document.getElementById('destinationList');
+    destinationMenu.innerHTML = `<option value="none" selected disabled hidden>Select an Option</option>`
     destinationList.forEach(place => {
       destinationMenu.innerHTML += `
       <option value="${place}">${place}</option>

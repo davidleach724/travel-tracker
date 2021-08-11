@@ -33,10 +33,15 @@ Mod 2 FE Final Project
 - [Cassandra Torske](https://github.com/CassandraGoose)
 
 ## Wins
-- 
+- Creating a project with a unified and pleasing UI/UX that consists of hand-drawn graphics, smooth-scroll to page sections, and multiple media queries
+- Adding logic to calendars adjust in real-time
+- Creating a responsive dropdown menu that displays different pictures based on what item is selected
+- Implementing OOP to drive the design of the application and code
 
 ## Challenges + Future Add-ons
-- 
+- Organizing the class structure for a project of this scale
+- Displaying a large volume of information on multiple cohesive layouts on user's different devices 
+- An administrative view to edit trips and add destinations
 
 
 ## Project Specs
