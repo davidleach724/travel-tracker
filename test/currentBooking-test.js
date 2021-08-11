@@ -57,4 +57,8 @@ describe('Current Booking', () => {
   it('should sum up total costs', () => {
     expect(currentBookingTrip.totalCosts).to.equal('$4,620.00');
   })
+
+  it('should format numbers into currency', () => {
+    expect(currentBookingTrip.formatToCurrency(300)).to.equal('$300.00')
+  })
 })
