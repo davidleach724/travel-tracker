@@ -3,7 +3,7 @@ Mod 2 FE Final Project
 
 
 ## Overview
-
+Please make sure your seat backs and tray tables are in their full upright position becuase we're getting ready to travel. This application allows a user to log on with their credentials and view pending, upcoming, and past trips as well as book brand new adventures. The ever-changing destination list allows the user to take a sneak peak of where they are traveling and the easy-to-navigate calendar and traveler quanity allows a user to plan a trip for themselves or all their friends! Get on to traveling with Travel On. 
 
 ## Technologies
 - Javascript
@@ -16,7 +16,7 @@ Mod 2 FE Final Project
 - Testing Suites Mocha and Chai
 
 
-## Illustrations
+## See it in action
 
 
 
