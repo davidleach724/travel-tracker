@@ -1,6 +1,6 @@
 // An example of how you tell webpack to use a CSS (SCSS) file
 import './css/base.scss';
-import moment, { duration } from 'moment';
+import moment from 'moment';
 
 // An example of how you tell webpack to use an image (also need to link to it in the index.html)
 import './images/turing-logo.png'
@@ -67,7 +67,6 @@ bookButton.addEventListener('click', function() {
 
 // Global variables
 let allTravelerData, travelerData, allTrips, destinationData, travelerTrips, newTripId, currentTrip, userList;
-
 let userID = 33;
 
 // Functions

@@ -9,7 +9,7 @@ $secondary-text-color: #757575;
 $divider-color:        #BDBDBD;
 $background-container-color: #FFFFFF;
 $card-background-color: #f1f4f6;
-;
+
 
 * {
   margin: 0;
@@ -134,7 +134,7 @@ nav {
 }
 
 .conflict-prompt {
-  margin-top: 8px;
+  margin-top: 9px;
 }
 
 #submitButton {
@@ -278,6 +278,10 @@ h2 {
   align-items: center;
 }
 
+#totalSpentYear {
+  font-size: 2.5vh;
+}
+
 // FOOTER
 footer {
   display: flex;
@@ -340,6 +344,4 @@ footer {
     margin: 2px;
     font-size: smaller;
   }
-
- 
 }
