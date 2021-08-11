@@ -61,4 +61,8 @@ describe('Current Booking', () => {
   it('should format numbers into currency', () => {
     expect(currentBookingTrip.formatToCurrency(300)).to.equal('$300.00')
   })
+
+  it('should only format numbers into currency', () => {
+    expect(currentBookingTrip.formatToCurrency('$300')).to.equal('$NaN')
+  })
 })
