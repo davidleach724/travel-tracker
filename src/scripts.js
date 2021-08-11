@@ -147,7 +147,7 @@ function checkUserInputs() {
     let errorMessage;
     let usernameID = parseInt(usernameInput.value.split('traveler')[1])
     if (!userList.includes(usernameID)) {
-      errorMessage = 'Please enter a valid username ex: traveler + ID'
+      errorMessage = 'Please enter a valid username'
       domUpdates.showLogonError(errorMessage)
     } else if (passwordInput.value != 'travel'){
       errorMessage = 'Please enter a valid password'
